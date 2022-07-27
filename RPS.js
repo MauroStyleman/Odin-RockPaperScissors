@@ -1,7 +1,6 @@
 const computerOptions = ["Rock", "Paper", "Scissors"];
 let playerPoints = 0;
 let computerPoints = 0;
-let tiePoints = 0;
 
 function getComputerChoice() {
     return computerOptions[Math.floor(Math.random() * computerOptions.length)];
@@ -10,8 +9,11 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
+    const choiceP = document.querySelector('#ChoiceP')
+    const choiceC = document.querySelector('#ChoiceC')
+    choiceP.textContent = playerSelection;
+    choiceC.textContent = computerSelection;
     const score = document.querySelector('#Result')
-
     if ((playerSelection === "rock" && computerSelection === "scissors")
         || (playerSelection === "paper" && computerSelection === "rock")
         || (playerSelection === "scissors" && computerSelection === "paper")) {
@@ -20,18 +22,14 @@ function playRound(playerSelection, computerSelection) {
         score.textContent = "you win this round"
         playerPoints++;
         const points = document.querySelector('#P_Win')
-        points.textContent = ` Player Score:${playerPoints}`
+        points.textContent = `${playerPoints}`
     } else if (playerSelection === computerSelection) {
         score.textContent = "draw"
-        tiePoints++;
-        const points = document.querySelector('#Draw')
-        points.textContent = `Total Draws:${tiePoints}`
-
     } else {
         computerPoints++;
         score.textContent = "you lost this round"
         const points = document.querySelector('#C_Win')
-        points.textContent = `ComputerScore:${computerPoints}`
+        points.textContent = `${computerPoints}`
     }
     if (playerPoints === 5 || computerPoints === 5) {
         document.querySelector('#R_Button').disabled = true

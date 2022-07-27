@@ -1,0 +1,115 @@
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+
+body {
+    background-color: #24272e;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+#title {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    background-color:#141414 ;
+    margin: 0;
+    padding: 0.7em;
+    text-align: center;
+    font-size: 50px;
+}
+#Result {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: bold;
+    font-size: 34px;
+    margin-top: 1.1em;
+    text-align: center;
+}
+.ButtonContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+#P_Button,#R_Button,#S_Button{
+    margin-top: 1.1em;
+    font-size: 120px;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    border: 1px #393e46 solid;
+    cursor: pointer;
+    background-color: #393e46;
+    margin-bottom: 0.9em;
+
+}
+#P_Button:hover,#R_Button:hover,#S_Button:hover{
+   border: #fac650 solid 3px;
+    width: 2em;
+    height: 2em;
+}
+#P_Button:disabled,#R_Button:disabled,#S_Button:disabled{
+    cursor: default;
+    pointer-events: none;
+}
+.ScoreContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20em;
+}
+.PlayerChildContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+}
+.Player {
+    font-size: 32px;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+
+}
+#P_Win,#C_Win{
+    font-size: 70px ;
+    color: #fac650;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+#ChoiceC,#ChoiceP{
+    font-size: 20px;
+}
+#Reset_Button {
+    font-size: 20px;
+    width: 200px;
+    height: 50px;
+    align-self: center;
+    border-radius: 10px;
+    border: #24272e solid 2px;
+    background-color: #393e46;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 100px;
+}
+#Reset_Button:hover {
+    background-color: #fac650;
+    cursor: pointer;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-top: auto;
+    color: white;
+    padding: 0;
+    background-color: #141414;
+
+}
+footer a {
+    text-decoration: none;
+}
+footer a:visited, footer a:active{
+    color: white;
+}
