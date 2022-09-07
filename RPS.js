@@ -19,15 +19,15 @@ function playRound(playerSelection, computerSelection) {
         || (playerSelection === "scissors" && computerSelection === "paper")) {
 
 
-        score.textContent = "you win this round"
+        score.textContent = `You won, ${playerSelection} beats ${computerSelection}`
         playerPoints++;
         const points = document.querySelector('#P_Win')
         points.textContent = `${playerPoints}`
     } else if (playerSelection === computerSelection) {
-        score.textContent = "draw"
+        score.textContent = "tie"
     } else {
         computerPoints++;
-        score.textContent = "you lost this round"
+        score.textContent = `You lost, ${computerSelection} beats ${playerSelection}`
         const points = document.querySelector('#C_Win')
         points.textContent = `${computerPoints}`
     }
@@ -36,9 +36,9 @@ function playRound(playerSelection, computerSelection) {
         document.querySelector('#P_Button').disabled = true
         document.querySelector('#S_Button').disabled = true
         if (playerPoints > computerPoints) {
-            score.textContent = "Player won this game"
+            score.textContent = "Victory :)"
         } else {
-            score.textContent = "Computer won this game"
+            score.textContent = "Defeated :("
         }
     }
     return playerSelection && computerSelection;
